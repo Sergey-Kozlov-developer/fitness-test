@@ -1,1 +1,12 @@
 @import "tailwindcss";
+
+@theme {
+    --color-header: #1d5b43;
+}
+
+@layer components {
+    /* // липкое меню */
+    .sticky-nav {
+        @apply sticky top-0 w-full z-50 border-b backdrop-blur;
+    }
+}
