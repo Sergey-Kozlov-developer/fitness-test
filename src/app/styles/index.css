@@ -1,8 +1,17 @@
 @import "tailwindcss";
 
+@layer base {
+    body {
+        background-color: #232829;
+        color: white;
+    }
+}
+
 @theme {
     --color-header: #1d5b43;
     --color-main-background: #232829;
+    --color-orange: #fdb056;
+    --color-body: #232829;
 }
 @keyframes pulse {
     0%,
