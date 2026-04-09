@@ -2,6 +2,19 @@
 
 @theme {
     --color-header: #1d5b43;
+    --color-main-background: #232829;
+}
+@keyframes pulse {
+    0%,
+    100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+.animate-pulse {
+    animation: pulse 0.5s ease-in-out infinite;
 }
 
 @layer components {
