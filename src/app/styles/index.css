@@ -11,7 +11,9 @@
     --color-header: #1d5b43;
     --color-main-background: #232829;
     --color-orange: #fdb056;
+    --color-red: #fd5656;
     --color-body: #232829;
+    --color-text-button: #191e1f;
 }
 @keyframes pulse {
     0%,
@@ -26,9 +28,13 @@
     animation: pulse 0.5s ease-in-out infinite;
 }
 
+.animate-button {
+    animation: pulse 1.5s ease-in-out infinite;
+}
+
 @layer components {
     /* // липкое меню */
     .sticky-nav {
-        @apply sticky top-0 w-full z-50 border-b backdrop-blur;
+        @apply sticky top-0 z-50 w-full border-b backdrop-blur;
     }
 }

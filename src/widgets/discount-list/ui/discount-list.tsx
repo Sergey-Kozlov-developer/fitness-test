@@ -1,4 +1,5 @@
 import { useGetTariffsQuery } from "@/entities/discount/discountApi";
+import { AgreementSection } from "@/features/purchase-agreement";
 import { cn } from "@/shared/lib/utils";
 import DiscountCard from "@/widgets/discount-list/ui/discount-card";
 import manImg from "@assets/images/man.png";
@@ -20,10 +21,8 @@ export const DiscountList = () => {
 
     return (
         <div className="flex gap-21.75 mt-8">
-            {/* <div className="relative"> */}
             <img src={manImg} alt="Man" className="object-contain w-96 h-191" />
-            {/* </div> */}
-            <div className="space-y-4">
+            <div className="space-y-4 w-187">
                 {bestTariff && (
                     <DiscountCard
                         discount={bestTariff}
@@ -38,16 +37,16 @@ export const DiscountList = () => {
                 <div
                     className={cn(
                         "flex gap-2 py-4.5 px-5 w-[65%]",
-                        "bg-white/5 backdrop-blur-sm rounded-4xl p-5 border border-white/10 hover:border-orange/50 transition-all"
+                        "bg-white/5 backdrop-blur-sm rounded-2xl p-5 border border-white/10 hover:border-orange/50 transition-all"
                     )}
                 >
                     <span className="text-orange">!</span>
                     <p>
                         Следуя плану на 3 месяца и более, люди получают
-                        <br />
-                        в 2 раза лучший результат, чем за 1 месяц
+                        <br />в 2 раза лучший результат, чем за 1 месяц
                     </p>
                 </div>
+                <AgreementSection />
             </div>
         </div>
     );
