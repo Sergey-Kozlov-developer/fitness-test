@@ -1,4 +1,5 @@
 import type { IDiscount } from "@/entities/discount/types";
+import { useTimer } from "@/shared/context/timer-context";
 import { cn } from "@/shared/lib/utils";
 import type { ReactNode } from "react";
 
@@ -15,6 +16,7 @@ const DiscountCard = ({
     isSelected,
     onSelect,
 }: IDiscountCardProps) => {
+    const { isTimerActive } = useTimer();
     const discountPercent = Math.round(
         ((discount.full_price - discount.price) / discount.full_price) * 100
     );
@@ -29,9 +31,13 @@ const DiscountCard = ({
             )}
         >
             {/* Скидка */}
-            <div className="absolute top-0 left-12.75 mb-2 text-sm font-bold text-white bg-red py-1.25 px-2 rounded-b-md rounded-bl-md">
-                -{discountPercent}%
-            </div>
+            {isTimerActive && (
+                <div
+                    className={`absolute top-0 left-12.75 mb-2 text-sm font-bold text-white bg-red py-1.25 px-2 rounded-b-md rounded-bl-md transition-all duration-500 ${isTimerActive ? "opacity-100" : "opacity-0 hidden"}`}
+                >
+                    -{discountPercent}%
+                </div>
+            )}
 
             {/* Для карточки "Навсегда" - горизонтальное расположение */}
             {discount.is_best ? (
@@ -46,9 +52,13 @@ const DiscountCard = ({
                                 <span className="text-5xl font-bold text-orange">
                                     {discount.price} ₽
                                 </span>
-                                <span className="text-2xl text-gray-400 line-through text-end">
-                                    {discount.full_price} ₽
-                                </span>
+                                {isTimerActive && (
+                                    <span
+                                        className={`text-2xl text-gray-400 line-through transition-all duration-500 ${isTimerActive ? "opacity-100" : "opacity-0 hidden"}`}
+                                    >
+                                        {discount.full_price} ₽
+                                    </span>
+                                )}
                             </div>
                         </div>
 
@@ -76,9 +86,13 @@ const DiscountCard = ({
                         <span className="text-5xl font-bold text-white">
                             {discount.price} ₽
                         </span>
-                        <span className="text-2xl text-center text-gray-400 line-through">
-                            {discount.full_price} ₽
-                        </span>
+                        {isTimerActive && (
+                            <span
+                                className={`text-2xl text-gray-400 line-through transition-all duration-500 ${isTimerActive ? "opacity-100" : "opacity-0 hidden"}`}
+                            >
+                                {discount.full_price} ₽
+                            </span>
+                        )}
                     </div>
 
                     {/* Текст */}
