@@ -14,11 +14,11 @@ export const Timer = () => {
     };
     return (
         <div className="py-2 text-center">
-            <p className="text-2xl font-bold text-white">
+            <p className="text-white font-bold px-4 sm:px-0 text-[14px] min-[375px]:text-base lg:text-2xl">
                 Успейте открыть пробную неделю
             </p>
             <p
-                className={`text-4xl ${getTimeColor()} ${isBlinking ? "animate-pulse" : ""}`}
+                className={`text-2xl sm:text-3xl md:text-4xl ${getTimeColor()} ${isBlinking ? "animate-pulse" : ""}`}
             >
                 <span>+</span> {timeString} <span>+</span>
             </p>
