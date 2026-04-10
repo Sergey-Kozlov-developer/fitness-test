@@ -5,17 +5,26 @@ import type { ReactNode } from "react";
 interface IDiscountCardProps {
     discount: IDiscount;
     className?: ReactNode;
+    isSelected?: boolean;
+    onSelect?: () => void;
 }
 
-const DiscountCard = ({ discount, className }: IDiscountCardProps) => {
+const DiscountCard = ({
+    discount,
+    className,
+    isSelected,
+    onSelect,
+}: IDiscountCardProps) => {
     const discountPercent = Math.round(
         ((discount.full_price - discount.price) / discount.full_price) * 100
     );
 
     return (
         <div
+            onClick={onSelect}
             className={cn(
-                "bg-white/5 backdrop-blur-sm rounded-4xl p-5 border border-white/10 hover:border-orange/50 transition-all relative",
+                "bg-white/5 backdrop-blur-sm rounded-4xl p-5 border border-white/10 hover:border-orange/50 transition-all relative cursor-pointer",
+                isSelected ? "border-orange" : "",
                 className
             )}
         >

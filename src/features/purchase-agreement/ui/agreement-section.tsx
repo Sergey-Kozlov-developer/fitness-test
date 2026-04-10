@@ -1,6 +1,12 @@
 import { useState } from "react";
 
-export const AgreementSection = () => {
+interface IAgreementSectionProps {
+    isTariffSelected?: boolean;
+}
+
+export const AgreementSection = ({
+    isTariffSelected,
+}: IAgreementSectionProps) => {
     const [isChecked, setIsChecked] = useState(false);
     const [isError, setIsError] = useState(false);
 
@@ -51,7 +57,7 @@ export const AgreementSection = () => {
 
             <button
                 onClick={handlePurchase}
-                className="w-88 py-5 font-bold text-text-button transition-all rounded-[20px] px-15 animate-button bg-orange cursor-pointer"
+                className={`w-88 py-5 font-bold text-text-button transition-all rounded-[20px] px-15 bg-orange cursor-pointer ${isTariffSelected ? "animate-button" : ""}`}
             >
                 Купить
             </button>

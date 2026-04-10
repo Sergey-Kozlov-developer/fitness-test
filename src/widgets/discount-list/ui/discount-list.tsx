@@ -3,10 +3,11 @@ import { AgreementSection } from "@/features/purchase-agreement";
 import { cn } from "@/shared/lib/utils";
 import DiscountCard from "@/widgets/discount-list/ui/discount-card";
 import manImg from "@assets/images/man.png";
-import { useMemo } from "react";
+import { useMemo, useState } from "react";
 
 export const DiscountList = () => {
     const { data, isLoading, isError } = useGetTariffsQuery();
+    const [selected, setSelected] = useState<string | null>(null);
 
     const sortedData = useMemo(() => {
         if (!data) return [];
@@ -40,11 +41,18 @@ export const DiscountList = () => {
                         <DiscountCard
                             discount={bestTariff}
                             className="pl-30.5 pr-20 pt-8.5 pb-6.5"
+                            isSelected={selected === bestTariff.id}
+                            onSelect={() => setSelected(bestTariff.id)}
                         />
                     )}
                     <div className="grid grid-cols-3 gap-4">
                         {otherTariffs.map((item) => (
-                            <DiscountCard key={item.id} discount={item} />
+                            <DiscountCard
+                                key={item.id}
+                                discount={item}
+                                isSelected={selected === item.id}
+                                onSelect={() => setSelected(item.id)}
+                            />
                         ))}
                     </div>
                     <div
@@ -59,7 +67,7 @@ export const DiscountList = () => {
                             <br />в 2 раза лучший результат, чем за 1 месяц
                         </p>
                     </div>
-                    <AgreementSection />
+                    <AgreementSection isTariffSelected={!!selected} />
                 </div>
             </div>
             <div className="w-3/4 border border-down-border rounded-4xl p-7.5">
