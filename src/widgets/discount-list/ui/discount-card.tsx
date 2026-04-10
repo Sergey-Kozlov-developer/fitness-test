@@ -16,7 +16,7 @@ const DiscountCard = ({
     isSelected,
     onSelect,
 }: IDiscountCardProps) => {
-    const { isTimerActive } = useTimer();
+    const { isTimerActive, time } = useTimer();
     const discountPercent = Math.round(
         ((discount.full_price - discount.price) / discount.full_price) * 100
     );
@@ -67,7 +67,11 @@ const DiscountCard = ({
                                 </span>
                                 {isTimerActive && (
                                     <span
-                                        className={`text-2xl text-gray-400 line-through transition-all duration-500 ${isTimerActive ? "opacity-100" : "opacity-0 hidden"}`}
+                                        className={`text-2xl line-through transition-all duration-500 ${
+                                            time <= 30 && time > 0
+                                                ? "text-red-500 animate-pulse"
+                                                : "text-gray-400"
+                                        }`}
                                     >
                                         {discount.full_price} ₽
                                     </span>
@@ -100,7 +104,9 @@ const DiscountCard = ({
                                     {currentPrice} ₽
                                 </span>
                                 {isTimerActive && (
-                                    <span className="text-2xl text-gray-400 line-through">
+                                    <span
+                                        className={`text-2xl text-gray-400 line-through ${time <= 30 && time > 0 ? "text-red-500 animate-pulse" : "text-gray-400"}`}
+                                    >
                                         {discount.full_price} ₽
                                     </span>
                                 )}
