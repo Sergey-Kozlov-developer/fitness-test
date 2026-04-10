@@ -40,7 +40,6 @@ const DiscountCard = ({
                 className
             )}
         >
-            {/* Скидка - справа на мобильных, слева на остальных */}
             {isTimerActive && (
                 <div
                     className={cn(
@@ -52,11 +51,9 @@ const DiscountCard = ({
                 </div>
             )}
 
-            {/* Для карточки "Навсегда" - горизонтальное расположение */}
             {discount.is_best ? (
                 <>
                     <div className="flex items-center justify-between gap-10">
-                        {/* Левая часть: период и цены */}
                         <div>
                             <div className="mb-3 text-xl font-bold text-center text-white ">
                                 {discount.period}
@@ -79,14 +76,12 @@ const DiscountCard = ({
                             </div>
                         </div>
 
-                        {/* Правая часть: текст */}
                         <div className="flex-1">
                             <p className="text-[16px] text-gray-300">
                                 {getText()}
                             </p>
                         </div>
                     </div>
-                    {/* Best badge */}
                     <div className="absolute text-2xl text-orange top-2.5 right-5 max-lg:top-3.5">
                         ХИТ!
                     </div>
@@ -94,7 +89,6 @@ const DiscountCard = ({
             ) : (
                 <div className="w-full lg:w-60">
                     <div className="flex flex-row items-center justify-between gap-4 lg:flex-col lg:items-start xl:items-stretch lg:gap-0">
-                        {/* Левая часть: период и цены */}
                         <div className="text-left lg:text-center">
                             <div className="mb-3 text-xl font-bold text-white">
                                 {discount.period}
@@ -113,7 +107,6 @@ const DiscountCard = ({
                             </div>
                         </div>
 
-                        {/* Правая часть: текст */}
                         <div className="flex-1 lg:text-start xl:text-center">
                             <p className="text-[16px] text-gray-300">
                                 {discount.text}

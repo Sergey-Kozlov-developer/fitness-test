@@ -30,7 +30,6 @@ export const DiscountList = () => {
 
     return (
         <div className="flex flex-col gap-8 lg:gap-21.75 mt-8">
-            {/* Изображение сверху на мобильных, слева на остальных */}
             <div className="flex flex-col gap-5 lg:flex-row">
                 <img
                     src={manImg}
