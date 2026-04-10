@@ -14,7 +14,15 @@ export const DiscountList = () => {
     }, [data]);
 
     const bestTariff = sortedData[0]?.is_best ? sortedData[0] : null;
-    const otherTariffs = sortedData.filter((item) => !item.is_best);
+    const otherTariffs = useMemo(() => {
+        const filtered = sortedData.filter((item) => !item.is_best);
+        const order: Record<string, number> = {
+            "3 месяца": 0,
+            "1 месяц": 1,
+            "1 неделя": 2,
+        };
+        return [...filtered].sort((a, b) => order[a.period] - order[b.period]);
+    }, [sortedData]);
 
     if (isLoading) return <div>Loading...</div>;
     if (isError) return <div>Error loading tariffs</div>;

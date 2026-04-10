@@ -29,8 +29,8 @@ const DiscountCard = ({ discount, className }: IDiscountCardProps) => {
                 <>
                     <div className="flex items-center justify-between gap-10">
                         {/* Левая часть: период и цены */}
-                        <div className="">
-                            <div className="mb-3 text-xl font-bold text-white">
+                        <div>
+                            <div className="mb-3 text-xl font-bold text-center text-white">
                                 {discount.period}
                             </div>
                             <div className="flex flex-col mb-3">
@@ -58,7 +58,7 @@ const DiscountCard = ({ discount, className }: IDiscountCardProps) => {
             ) : (
                 <div className="w-60">
                     {/* Период */}
-                    <div className="mb-3 text-xl font-bold text-white">
+                    <div className="mb-3 text-xl font-bold text-center text-white">
                         {discount.period}
                     </div>
 
