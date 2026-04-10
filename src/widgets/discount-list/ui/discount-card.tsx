@@ -15,12 +15,12 @@ const DiscountCard = ({ discount, className }: IDiscountCardProps) => {
     return (
         <div
             className={cn(
-                "bg-white/5 backdrop-blur-sm rounded-4xl p-5 border border-white/10 hover:border-orange/50 transition-all",
+                "bg-white/5 backdrop-blur-sm rounded-4xl p-5 border border-white/10 hover:border-orange/50 transition-all relative",
                 className
             )}
         >
             {/* Скидка */}
-            <div className="mb-2 text-sm font-bold text-orange">
+            <div className="absolute top-0 left-12.75 mb-2 text-sm font-bold text-white bg-red py-1.25 px-2 rounded-b-md rounded-bl-md">
                 -{discountPercent}%
             </div>
 
@@ -30,7 +30,7 @@ const DiscountCard = ({ discount, className }: IDiscountCardProps) => {
                     <div className="flex items-center justify-between gap-10">
                         {/* Левая часть: период и цены */}
                         <div>
-                            <div className="mb-3 text-xl font-bold text-center text-white">
+                            <div className="mb-3 text-xl font-bold text-center text-white ">
                                 {discount.period}
                             </div>
                             <div className="flex flex-col mb-3">
@@ -51,14 +51,14 @@ const DiscountCard = ({ discount, className }: IDiscountCardProps) => {
                         </div>
                     </div>
                     {/* Best badge */}
-                    <div className="absolute px-2 py-1 text-xs text-white rounded-full -top-2 -right-2 bg-orange">
-                        Хит
+                    <div className="absolute text-2xl text-orange top-2.5 right-5">
+                        ХИТ!
                     </div>
                 </>
             ) : (
                 <div className="w-60">
                     {/* Период */}
-                    <div className="mb-3 text-xl font-bold text-center text-white">
+                    <div className="mt-8 mb-3 text-xl font-bold text-center text-white">
                         {discount.period}
                     </div>
 
