@@ -29,23 +29,25 @@ export const DiscountList = () => {
     if (isError) return <div>Error loading tariffs</div>;
 
     return (
-        <div className="flex flex-col gap-21.75 mt-8">
-            <div className="flex gap-5">
+        <div className="flex flex-col gap-8 lg:gap-21.75 mt-8">
+            {/* Изображение сверху на мобильных, слева на остальных */}
+            <div className="flex flex-col gap-5 lg:flex-row">
                 <img
                     src={manImg}
                     alt="Man"
-                    className="object-contain w-96 h-191"
+                    className="object-contain w-full h-auto lg:w-96 lg:h-191"
                 />
-                <div className="space-y-4 w-187">
+                <div className="w-full space-y-4 lg:w-187">
                     {bestTariff && (
                         <DiscountCard
                             discount={bestTariff}
-                            className="pl-30.5 pr-20 pt-8.5 pb-6.5"
+                            className="lg:pl-30.5 lg:pr-20 pt-8.5 pb-6.5"
                             isSelected={selected === bestTariff.id}
                             onSelect={() => setSelected(bestTariff.id)}
                         />
                     )}
-                    <div className="grid grid-cols-3 gap-4">
+
+                    <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
                         {otherTariffs.map((item) => (
                             <DiscountCard
                                 key={item.id}
@@ -57,7 +59,7 @@ export const DiscountList = () => {
                     </div>
                     <div
                         className={cn(
-                            "flex gap-2 py-4.5 px-5 w-[65%]",
+                            "flex gap-2 py-4.5 px-5 w-full lg:w-[65%]",
                             "bg-white/5 backdrop-blur-sm rounded-2xl p-5 border border-white/10 hover:border-orange/50 transition-all"
                         )}
                     >
@@ -70,16 +72,16 @@ export const DiscountList = () => {
                     <AgreementSection isTariffSelected={!!selected} />
                 </div>
             </div>
-            <div className="w-3/4 border border-down-border rounded-4xl p-7.5">
-                <button className="mb-7.5 text-green rounded-4xl border border-green px-7.5 py-4 text-3xl">
+
+            <div className="w-full border border-down-border rounded-4xl p-4 sm:p-7.5">
+                <button className="mb-7.5 text-green rounded-4xl border border-green px-4 sm:px-7.5 py-2 sm:py-4 text-xl sm:text-3xl">
                     гарантия возврата 30 дней
                 </button>
-                <p className="text-2xl leading-8 text-warranty">
+                <p className="text-base leading-6 sm:text-2xl sm:leading-8 text-warranty">
                     Мы уверены, что наш план сработает для тебя и ты увидишь
-                    видимые результаты уже через
-                    <br /> 4 недели! Мы даже готовы полностью вернуть твои
-                    деньги в течение 30 дней с момента
-                    <br /> покупки, если ты не получишь видимых результатов.
+                    видимые результаты уже через 4 недели! Мы даже готовы
+                    полностью вернуть твои деньги в течение 30 дней с момента
+                    покупки, если ты не получишь видимых результатов.
                 </p>
             </div>
         </div>
