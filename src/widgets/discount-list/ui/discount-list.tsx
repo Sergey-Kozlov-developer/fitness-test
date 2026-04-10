@@ -28,33 +28,51 @@ export const DiscountList = () => {
     if (isError) return <div>Error loading tariffs</div>;
 
     return (
-        <div className="flex gap-21.75 mt-8">
-            <img src={manImg} alt="Man" className="object-contain w-96 h-191" />
-            <div className="space-y-4 w-187">
-                {bestTariff && (
-                    <DiscountCard
-                        discount={bestTariff}
-                        className="pl-30.5 pr-20 pt-8.5 pb-6.5"
-                    />
-                )}
-                <div className="grid grid-cols-3 gap-4">
-                    {otherTariffs.map((item) => (
-                        <DiscountCard key={item.id} discount={item} />
-                    ))}
-                </div>
-                <div
-                    className={cn(
-                        "flex gap-2 py-4.5 px-5 w-[65%]",
-                        "bg-white/5 backdrop-blur-sm rounded-2xl p-5 border border-white/10 hover:border-orange/50 transition-all"
+        <div className="flex flex-col gap-21.75 mt-8">
+            <div className="flex gap-21.75">
+                <img
+                    src={manImg}
+                    alt="Man"
+                    className="object-contain w-96 h-191"
+                />
+                <div className="space-y-4 w-187">
+                    {bestTariff && (
+                        <DiscountCard
+                            discount={bestTariff}
+                            className="pl-30.5 pr-20 pt-8.5 pb-6.5"
+                        />
                     )}
-                >
-                    <span className="text-orange">!</span>
-                    <p>
-                        Следуя плану на 3 месяца и более, люди получают
-                        <br />в 2 раза лучший результат, чем за 1 месяц
-                    </p>
+                    <div className="grid grid-cols-3 gap-4">
+                        {otherTariffs.map((item) => (
+                            <DiscountCard key={item.id} discount={item} />
+                        ))}
+                    </div>
+                    <div
+                        className={cn(
+                            "flex gap-2 py-4.5 px-5 w-[65%]",
+                            "bg-white/5 backdrop-blur-sm rounded-2xl p-5 border border-white/10 hover:border-orange/50 transition-all"
+                        )}
+                    >
+                        <span className="text-orange">!</span>
+                        <p>
+                            Следуя плану на 3 месяца и более, люди получают
+                            <br />в 2 раза лучший результат, чем за 1 месяц
+                        </p>
+                    </div>
+                    <AgreementSection />
                 </div>
-                <AgreementSection />
+            </div>
+            <div className="w-3/4 border border-down-border rounded-4xl p-7.5">
+                <button className="mb-7.5 text-green rounded-4xl border border-green px-7.5 py-4 text-3xl">
+                    гарантия возврата 30 дней
+                </button>
+                <p className="text-2xl leading-8 text-warranty">
+                    Мы уверены, что наш план сработает для тебя и ты увидишь
+                    видимые результаты уже через
+                    <br /> 4 недели! Мы даже готовы полностью вернуть твои
+                    деньги в течение 30 дней с момента
+                    <br /> покупки, если ты не получишь видимых результатов.
+                </p>
             </div>
         </div>
     );

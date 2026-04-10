@@ -12,8 +12,11 @@
     --color-main-background: #232829;
     --color-orange: #fdb056;
     --color-red: #fd5656;
+    --color-green: #81fe95;
     --color-body: #232829;
     --color-text-button: #191e1f;
+    --color-warranty: #dcdcdc;
+    --color-down-border: #484d4e;
 }
 @keyframes pulse {
     0%,
