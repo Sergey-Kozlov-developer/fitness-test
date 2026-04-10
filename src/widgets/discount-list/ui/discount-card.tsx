@@ -21,6 +21,8 @@ const DiscountCard = ({
         ((discount.full_price - discount.price) / discount.full_price) * 100
     );
 
+    const currentPrice = isTimerActive ? discount.price : discount.full_price;
+
     return (
         <div
             onClick={onSelect}
@@ -50,7 +52,7 @@ const DiscountCard = ({
                             </div>
                             <div className="flex flex-col mb-3">
                                 <span className="text-5xl font-bold text-orange">
-                                    {discount.price} ₽
+                                    {currentPrice} ₽
                                 </span>
                                 {isTimerActive && (
                                     <span
@@ -84,7 +86,7 @@ const DiscountCard = ({
                     {/* Цены */}
                     <div className="flex flex-col mb-3 px-9">
                         <span className="text-5xl font-bold text-white">
-                            {discount.price} ₽
+                            {currentPrice} ₽
                         </span>
                         {isTimerActive && (
                             <span

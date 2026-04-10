@@ -1,5 +1,4 @@
 import { useTimer } from "@/shared/context/timer-context";
-import { useEffect, useRef, useState } from "react";
 
 export const Timer = () => {
     const { time } = useTimer();
