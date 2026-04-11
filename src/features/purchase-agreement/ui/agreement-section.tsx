@@ -57,7 +57,7 @@ export const AgreementSection = ({
 
             <button
                 onClick={handlePurchase}
-                className={`w-88 max-sm:w-82 py-5 font-bold text-text-button transition-all rounded-[20px] px-15 bg-orange cursor-pointer ${isTariffSelected ? "animate-button" : ""}`}
+                className={`w-94 py-5 font-bold text-text-button transition-all rounded-[20px] px-15 bg-orange cursor-pointer ${isTariffSelected ? "animate-button" : ""}`}
             >
                 Купить
             </button>

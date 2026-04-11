@@ -61,7 +61,7 @@ export const DiscountList = () => {
                         />
                     )}
 
-                    <div className="grid grid-cols-1 gap-4 lg:grid-cols-3">
+                    <div className="grid grid-cols-1 gap-4 xl:grid-cols-3">
                         {otherTariffs.map((item) => (
                             <DiscountCard
                                 key={item.id}

@@ -92,8 +92,8 @@ const DiscountCard = ({
                     </div>
                 </>
             ) : (
-                <div className="w-full lg:w-60 max-lg:px-4">
-                    <div className="flex flex-row items-center justify-between gap-4 lg:flex-col lg:items-start xl:items-stretch lg:gap-0">
+                <div className="w-full xl:w-60 max-lg:px-4 lg:pl-5 md:pl-0">
+                    <div className="flex items-center justify-between gap-4 xl:flex-col xl:items-start xl:gap-0">
                         <div className="text-left lg:text-center">
                             <div className="mt-8 mb-3 text-xl font-bold text-white">
                                 {discount.period}
