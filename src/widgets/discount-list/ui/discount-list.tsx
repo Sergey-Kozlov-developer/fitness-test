@@ -30,7 +30,13 @@ export const DiscountList = () => {
 
     return (
         <div className="flex flex-col gap-8 lg:gap-21.75 mt-8">
-            <div className="flex flex-col gap-5 lg:flex-row">
+            <div className="w-full">
+                <h1 className="font-bold text-white mb-27.5 text-xl min-[375px]:text-2xl lg:text-4xl text-center lg:text-left">
+                    Выбери подходящий для себя
+                    <span className="text-orange"> тариф</span>
+                </h1>
+            </div>
+            <div className="flex flex-col gap-21.75 lg:flex-row justify-center">
                 <img
                     src={manImg}
                     alt="Man"
@@ -71,8 +77,7 @@ export const DiscountList = () => {
                     <AgreementSection isTariffSelected={!!selected} />
                 </div>
             </div>
-
-            <div className="w-full border border-down-border rounded-4xl p-4 sm:p-7.5">
+            <div className="border border-down-border rounded-4xl p-4 sm:p-7.5">
                 <button className="mb-7.5 text-green rounded-4xl border border-green px-4 sm:px-7.5 py-2 sm:py-4 text-xl sm:text-3xl">
                     гарантия возврата 30 дней
                 </button>
