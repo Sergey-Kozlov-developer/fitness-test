@@ -8,6 +8,7 @@ export const Timer = () => {
     const seconds = time % 60;
     const timeString = `${minutes.toString().padStart(2, "0")} : ${seconds.toString().padStart(2, "0")}`;
     const getTimeColor = () => {
+        if (time > 30) return "text-orange";
         if (time === 0) return "text-white";
         if (time <= 30) return "text-red-500";
         return "text-white";
