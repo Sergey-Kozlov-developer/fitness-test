@@ -35,7 +35,7 @@ const DiscountCard = ({
         <div
             onClick={onSelect}
             className={cn(
-                "bg-white/5 backdrop-blur-sm rounded-4xl border border-white/10 hover:border-orange/50 transition-all relative cursor-pointer",
+                "bg-white/5 backdrop-blur-sm max-sm:px-5.5 rounded-4xl border border-white/10 hover:border-orange/50 transition-all relative cursor-pointer",
                 isSelected ? "border-orange" : "",
                 className
             )}
@@ -53,7 +53,7 @@ const DiscountCard = ({
 
             {discount.is_best ? (
                 <>
-                    <div className="flex items-center justify-between gap-10">
+                    <div className="flex items-center justify-between gap-10 max-lg:px-4">
                         <div>
                             <div className="mb-3 text-xl font-bold text-center text-white ">
                                 {discount.period}
@@ -92,7 +92,7 @@ const DiscountCard = ({
                     </div>
                 </>
             ) : (
-                <div className="w-full lg:w-60">
+                <div className="w-full lg:w-60 max-lg:px-4">
                     <div className="flex flex-row items-center justify-between gap-4 lg:flex-col lg:items-start xl:items-stretch lg:gap-0">
                         <div className="text-left lg:text-center">
                             <div className="mt-8 mb-3 text-xl font-bold text-white">
@@ -113,7 +113,7 @@ const DiscountCard = ({
                         </div>
 
                         <div className="flex-1 lg:text-start xl:text-center">
-                            <p className="text-[16px] text-gray-300">
+                            <p className="text-[16px] text-gray-300 ">
                                 {discount.text}
                             </p>
                         </div>

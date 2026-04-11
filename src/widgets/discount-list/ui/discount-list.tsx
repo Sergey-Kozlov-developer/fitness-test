@@ -20,7 +20,6 @@ export const DiscountList = () => {
                     ? `${item.id}-unique`
                     : item.id,
         }));
-        console.log(uniqueData);
 
         return uniqueData.sort((a, b) => Number(b.is_best) - Number(a.is_best));
     }, [data]);
@@ -41,13 +40,12 @@ export const DiscountList = () => {
 
     return (
         <div className="flex flex-col gap-8 lg:gap-21.75 mt-8">
-            <div className="w-full">
-                <h1 className="font-bold text-white mb-27.5 text-xl min-[375px]:text-2xl lg:text-4xl text-center lg:text-left">
-                    Выбери подходящий для себя
-                    <span className="text-orange"> тариф</span>
-                </h1>
-            </div>
-            <div className="flex flex-col gap-21.75 lg:flex-row justify-center">
+            <h1 className="font-bold text-white mb-27.5 text-xl min-[375px]:text-2xl lg:text-4xl text-center lg:text-left">
+                Выбери подходящий для себя
+                <span className="text-orange"> тариф</span>
+            </h1>
+
+            <div className="flex flex-col gap-21.5 lg:flex-row justify-center">
                 <img
                     src={manImg}
                     alt="Man"
@@ -63,13 +61,14 @@ export const DiscountList = () => {
                         />
                     )}
 
-                    <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+                    <div className="grid grid-cols-1 gap-4 lg:grid-cols-3">
                         {otherTariffs.map((item) => (
                             <DiscountCard
                                 key={item.id}
                                 discount={item}
                                 isSelected={selected === item.id}
                                 onSelect={() => setSelected(item.id)}
+                                className="px-4"
                             />
                         ))}
                     </div>
