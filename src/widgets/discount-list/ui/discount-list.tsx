@@ -11,7 +11,18 @@ export const DiscountList = () => {
 
     const sortedData = useMemo(() => {
         if (!data) return [];
-        return [...data].sort((a, b) => Number(b.is_best) - Number(a.is_best));
+        // исправление одинакого id приходящего по API
+        // генерируем уникальный id
+        const uniqueData = data.map((item) => ({
+            ...item,
+            id:
+                item.period === "Навсегда" && item.id === data[2]?.id
+                    ? `${item.id}-unique`
+                    : item.id,
+        }));
+        console.log(uniqueData);
+
+        return uniqueData.sort((a, b) => Number(b.is_best) - Number(a.is_best));
     }, [data]);
 
     const bestTariff = sortedData[0]?.is_best ? sortedData[0] : null;

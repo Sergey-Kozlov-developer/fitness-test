@@ -24,7 +24,7 @@ const DiscountCard = ({
     const currentPrice = isTimerActive ? discount.price : discount.full_price;
     const getText = () => {
         if (discount.is_best) {
-            return window.innerWidth <= 390
+            return window.innerWidth <= 412
                 ? "Всегда быть в форме"
                 : discount.text;
         }
@@ -35,7 +35,7 @@ const DiscountCard = ({
         <div
             onClick={onSelect}
             className={cn(
-                "bg-white/5 backdrop-blur-sm rounded-4xl p-5 border border-white/10 hover:border-orange/50 transition-all relative cursor-pointer",
+                "bg-white/5 backdrop-blur-sm rounded-4xl border border-white/10 hover:border-orange/50 transition-all relative cursor-pointer",
                 isSelected ? "border-orange" : "",
                 className
             )}
@@ -44,7 +44,7 @@ const DiscountCard = ({
                 <div
                     className={cn(
                         "absolute top-0 mb-2 text-sm font-bold text-white bg-red py-1.25 px-2 rounded-b-md",
-                        "right-2 lg:left-12.75 lg:right-auto"
+                        "right-9 lg:left-12.75 lg:right-auto"
                     )}
                 >
                     -{discountPercent}%
@@ -82,7 +82,12 @@ const DiscountCard = ({
                             </p>
                         </div>
                     </div>
-                    <div className="absolute text-2xl text-orange top-2.5 right-5 max-lg:top-3.5">
+                    <div
+                        className={cn(
+                            "absolute text-2xl text-orange top-2.5 right-5 max-lg:top-3.5",
+                            ""
+                        )}
+                    >
                         ХИТ!
                     </div>
                 </>
@@ -90,7 +95,7 @@ const DiscountCard = ({
                 <div className="w-full lg:w-60">
                     <div className="flex flex-row items-center justify-between gap-4 lg:flex-col lg:items-start xl:items-stretch lg:gap-0">
                         <div className="text-left lg:text-center">
-                            <div className="mb-3 text-xl font-bold text-white">
+                            <div className="mt-8 mb-3 text-xl font-bold text-white">
                                 {discount.period}
                             </div>
                             <div className="flex flex-col mb-3">
