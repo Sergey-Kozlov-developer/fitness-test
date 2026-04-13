@@ -13,7 +13,6 @@ export const AgreementSection = ({
     const handlePurchase = () => {
         if (!isChecked) {
             setIsError(true);
-            return;
         } else {
             setIsError(false);
         }
