@@ -61,7 +61,7 @@ const DiscountCard = ({
                                 {discount.period}
                             </div>
                             <div className="flex flex-col mb-3">
-                                <span className="text-5xl font-bold text-orange">
+                                <span className="max-lg:text-3xl max-xl:text-5xl xl:text-5xl font-bold text-orange">
                                     {currentPrice} ₽
                                 </span>
                                 {isTimerActive && (
@@ -88,7 +88,7 @@ const DiscountCard = ({
                 <div className="w-full xl:w-60 max-lg:px-4 lg:pl-5 md:pl-0">
                     <div className="flex items-center justify-between gap-4 xl:flex-col xl:items-start xl:gap-0">
                         <div className="text-left lg:text-center">
-                            <div className="mt-8 mb-3 text-xl font-bold text-white">
+                            <div className="max-lg:mt-5 lg:mt-17.5 mb-3 text-xl font-bold text-white">
                                 {discount.period}
                             </div>
                             <div className="flex flex-col mb-3">
