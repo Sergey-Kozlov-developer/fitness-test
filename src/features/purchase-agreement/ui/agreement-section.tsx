@@ -45,7 +45,7 @@ export const AgreementSection = ({
                         checked:after:left-1/2
                         checked:after:-translate-x-1/2
                         checked:after:-translate-y-1/2
-                        ${isError ? "rounded border-2 border-red" : ""}
+                        ${isError && "rounded border-2 border-red"}
                     `}
                 />
                 <label htmlFor="agreement" className="text-gray-300">
@@ -56,7 +56,7 @@ export const AgreementSection = ({
 
             <button
                 onClick={handlePurchase}
-                className={`max-[375px]:w-72 w-90 py-5 font-bold text-text-button transition-all rounded-[20px] px-15 bg-orange cursor-pointer ${isTariffSelected ? "animate-button" : ""}`}
+                className={`max-[375px]:w-72 w-90 py-5 font-bold text-text-button transition-all rounded-[20px] px-15 bg-orange cursor-pointer ${isTariffSelected && "animate-button"}`}
             >
                 Купить
             </button>

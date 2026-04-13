@@ -22,6 +22,8 @@ const DiscountCard = ({
     );
 
     const currentPrice = isTimerActive ? discount.price : discount.full_price;
+    const priceColor =
+        time <= 30 && time > 0 ? "text-red-500 animate-pulse" : "text-gray-400";
     const getText = () => {
         if (discount.is_best) {
             return window.innerWidth <= 412
@@ -36,7 +38,7 @@ const DiscountCard = ({
             onClick={onSelect}
             className={cn(
                 "bg-white/5 backdrop-blur-sm max-sm:px-5.5 rounded-4xl border border-white/10 hover:border-orange/50 transition-all relative cursor-pointer",
-                isSelected ? "border-orange" : "",
+                isSelected && "border-orange",
                 className
             )}
         >
@@ -64,11 +66,7 @@ const DiscountCard = ({
                                 </span>
                                 {isTimerActive && (
                                     <span
-                                        className={`text-2xl line-through transition-all duration-500 ${
-                                            time <= 30 && time > 0
-                                                ? "text-red-500 animate-pulse"
-                                                : "text-gray-400"
-                                        }`}
+                                        className={`text-2xl line-through transition-all duration-500 ${priceColor}`}
                                     >
                                         {discount.full_price} ₽
                                     </span>
@@ -82,12 +80,7 @@ const DiscountCard = ({
                             </p>
                         </div>
                     </div>
-                    <div
-                        className={cn(
-                            "absolute text-2xl text-orange top-2.5 right-5 max-lg:top-3.5",
-                            ""
-                        )}
-                    >
+                    <div className="absolute text-2xl text-orange top-2.5 right-5 max-lg:top-3.5">
                         ХИТ!
                     </div>
                 </>
@@ -104,7 +97,7 @@ const DiscountCard = ({
                                 </span>
                                 {isTimerActive && (
                                     <span
-                                        className={`text-2xl text-gray-400 line-through ${time <= 30 && time > 0 ? "text-red-500 animate-pulse" : "text-gray-400"}`}
+                                        className={`text-2xl text-gray-400 line-through ${priceColor}`}
                                     >
                                         {discount.full_price} ₽
                                     </span>
