@@ -99,7 +99,7 @@ const DiscountCard = ({
                                 {discount.period}
                             </div>
                             <div className="flex flex-col mb-3">
-                                <span className="text-5xl font-bold text-white">
+                                <span className="max-lg:text-3xl max-xl:text-5xl xl:text-5xl font-bold text-white">
                                     {currentPrice} ₽
                                 </span>
                                 {isTimerActive && (
