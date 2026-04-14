@@ -40,16 +40,16 @@ export const DiscountList = () => {
 
     return (
         <div className="flex flex-col gap-8 lg:gap-21.75 mt-8">
-            <h1 className="font-bold text-white mb-27.5 text-xl min-[375px]:text-2xl lg:text-4xl text-center lg:text-left">
+            <h1 className="font-bold text-white md:mb-27.5 text-xl min-[375px]:text-2xl lg:text-4xl text-center lg:text-left">
                 Выбери подходящий для себя
                 <span className="text-orange"> тариф</span>
             </h1>
 
-            <div className="flex flex-col gap-21.5 lg:flex-row justify-center">
+            <div className="flex flex-col xl:gap-21.5 lg:flex-row justify-center">
                 <img
                     src={manImg}
                     alt="Man"
-                    className="object-contain w-full h-auto lg:w-96 lg:h-191"
+                    className="object-contain w-24.75 min-[375px]:w-31 md:w-80 lg:w-96 lg:h-191 mx-auto"
                 />
                 <div className="w-full space-y-4 lg:w-187">
                     {bestTariff && (
@@ -68,7 +68,7 @@ export const DiscountList = () => {
                                 discount={item}
                                 isSelected={selected === item.id}
                                 onSelect={() => setSelected(item.id)}
-                                className="px-4"
+                                className="lg:pl-30.5 lg:pr-20 pt-8.5 pb-6.5 xl:pl-5 xl:pr-5 xl:pt-17.5"
                             />
                         ))}
                     </div>
