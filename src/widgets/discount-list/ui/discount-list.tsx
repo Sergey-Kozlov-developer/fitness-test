@@ -40,7 +40,7 @@ export const DiscountList = () => {
 
     return (
         <div className="flex flex-col gap-8 lg:gap-21.75 mt-8">
-            <h1 className="font-bold text-white md:mb-27.5 text-xl min-[375px]:text-2xl lg:text-4xl text-center lg:text-left">
+            <h1 className="font-bold text-white md:mb-27.5 text-xl min-[375px]:text-2xl lg:text-4xl text-start sm:text-center lg:text-left w-full max-md:w-78">
                 Выбери подходящий для себя
                 <span className="text-orange"> тариф</span>
             </h1>
