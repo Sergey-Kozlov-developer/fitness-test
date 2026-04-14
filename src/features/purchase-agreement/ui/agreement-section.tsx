@@ -17,6 +17,7 @@ export const AgreementSection = ({
             setIsError(false);
         }
     };
+    const errorChecked = isError && "rounded border-2 border-red";
 
     const handleCheckboxChange = (
         event: React.ChangeEvent<HTMLInputElement>
@@ -45,7 +46,7 @@ export const AgreementSection = ({
                         checked:after:left-1/2
                         checked:after:-translate-x-1/2
                         checked:after:-translate-y-1/2
-                        ${isError && "rounded border-2 border-red"}
+                        ${errorChecked}
                     `}
                 />
                 <label htmlFor="agreement" className="text-gray-300">
