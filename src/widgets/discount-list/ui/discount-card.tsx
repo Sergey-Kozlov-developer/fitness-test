@@ -29,8 +29,11 @@ const DiscountCard = ({
         : "flex items-center justify-between gap-10";
 
     const discountPosition = discount.is_best
-        ? "max-[375px]:justify-end justify-between max-[375px]:gap-5"
-        : "justify-end min-[375px]:justify-start";
+        ? "md:justify-between max-md:justify-end max-md:gap-5 right-3.5"
+        : "justify-start";
+
+    const bottomPadding = discount.is_best ? "xl:pb-4" : "xl:pb-7.5";
+    const colorBestPrice = discount.is_best ? "text-orange" : "text-white";
 
     const getText = () => {
         if (discount.is_best) {
@@ -57,7 +60,7 @@ const DiscountCard = ({
                 <div
                     className={cn(
                         `text-sm min-[375px]:text-[16px] md:text-2xl font-bold text-white xl:text-center `,
-                        discount.is_best ? "xl:pb-4" : "xl:pb-7.5"
+                        bottomPadding
                     )}
                 >
                     {discount.period}
@@ -65,7 +68,7 @@ const DiscountCard = ({
                 <div
                     className={cn(
                         "text-3xl min-[375px]:text-[34px] lg:text-5xl font-bold xl:text-center inline-flex items-baseline",
-                        discount.is_best ? "text-orange" : "text-white"
+                        colorBestPrice
                     )}
                 >
                     {currentPrice}
@@ -90,7 +93,7 @@ const DiscountCard = ({
             </p>
             <div
                 className={cn(
-                    "absolute top-0 left-12.75 right-7.5 sm:right-0 flex items-start px-5",
+                    "absolute top-0 md:left-12.75 right-7.5 flex items-start px-5",
                     discountPosition
                 )}
             >
